@@ -11,7 +11,13 @@ Feature: Currently Open Lab
        | 201 KINGWOOD MEDICAL DR #A100 |
        | KINGWOOD, TX 77339            |
       And I should see "Open Now Open 24 hours"
-
+     When I follow "Show ▼"
+     Then there should be a table on the page with the following information:
+       | Monday    | Open 24 hours     |
+       | Tuesday   | 8:00 AM - 5:30 PM |
+       | Wednesday | 8:00 AM - 5:30 PM |
+       | Thursday  | 8:00 AM - 5:30 PM |
+       | Friday    | 8:00 AM - 5:30 PM |
 
   Scenario: a Lab is currently closed
     Given I am on "/closed-lab.php"
