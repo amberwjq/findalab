@@ -1,9 +1,9 @@
 # Changelog
 
 See the [release page] for authors, detailed dates, commit hashes and available downloads.
-## v2.8.4 - Show 'Open 24 hours' if lab open 24/
+## v2.8.4 - Show 'Open 24 hours' if lab open 24/7
 
-- **Changes:** Show 'Open 24 hours' if lab open 24/7 instead of showing a "Show ▼" butto
+- **Changes:** Show 'Open 24 hours' if lab open 24/7 instead of showing a "Show ▼" button
 
 ## v2.7.7 - Show Hours Arrow
 
