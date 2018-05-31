@@ -477,16 +477,27 @@
 
       /**
        * check if a lab opens 24 hours 7 days
-       * @param  {{day:hours}}}  component.types structured_hours components
+       * @param  {{day:hours}}  component.types structured_hours components
        * @return {boolean} true if the lab is open 24 hours 7 days. false if not.
        */
       this.isOpenWholeDayAllWeek= function(component) {
         var result = true;
-        var wholeDay = {open: "0:00 AM", close: "11:59 PM"};
         Object.values(component).forEach(function(element){
-          if(JSON.stringify(element) !== JSON.stringify(wholeDay)) result = false;
+          if(!self.isOpenWholeDay(element)) result = false;
         })
         return result;
+      }
+      /**
+       * check if a lab opens 24 hours
+       * @param  {{open:"AM", close:"PM"}}
+       * @return {boolean} true if the lab is open 24 hours. false if not.
+       */
+      this.isOpenWholeDay= function(component) {
+        if(component.open == "0:00 AM" && component.close == "11:59 PM" && !component.lunch_start && !component.lunch_stop){
+          return true;
+        } else {
+          return false;
+        }
       }
 
       /**
@@ -1174,17 +1185,19 @@
       this._buildHoursDom = function(lab, $result, date) {
         var $table = $result.find('[data-findalab-structured-hours-body]');
         var $toggleHours = $result.find('[data-findalab-toggle-hours]');
+        var $open24Hours = $("<strong>Open 24 Hours</strong>");
+        $open24Hours.addClass('findalab__hours--24hours');
         var time = ( date.getHours() * 100 ) + date.getMinutes();
         var removeHours = 'open';
         if(self.isOpenWholeDayAllWeek(lab.structured_hours)){
-          $toggleHours.replaceWith("<strong>Open 24 hours</strong>");
+          $toggleHours.replaceWith($open24Hours);
         }
         $.each(lab.structured_hours, function(/**string*/ day, /**Day*/ hours) {
           var $row = $result.find('[data-findalab-structured-hours-row][data-template]')
                       .clone()
                       .removeAttr('data-template');
           $row.find('[data-findalab-result-day]').html(day);
-          if(hours.open == "0:00 AM" && hours.close == "11:59 PM"){
+          if(self.isOpenWholeDay(hours)){
             $row.find('[data-findalab-result-hours]').html('Open 24 hours');
           }else{
             $row.find('[data-findalab-result-hours]').html(hours.open + ' - ' + hours.close);
