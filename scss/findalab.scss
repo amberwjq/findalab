@@ -211,6 +211,15 @@ $findalab-hours-font-size: 15px !default;
   }
 }
 
+.findalab_box {
+  width: $findalab-list-width;
+  margin: 3rem 1rem;
+  border: $findalab-border;
+  border-radius: $findalab-radius;
+  box-shadow: $findalab-total-shadow;
+  z-index: 0;
+}
+
 .findalab__map {
   display: none;
   width: 100%;
@@ -218,13 +227,14 @@ $findalab-hours-font-size: 15px !default;
   @media only screen and (min-width: $findalab-breakpoint) {
     display: block;
     height: 100%;
-    left: $findalab-list-width;
+    //left: $findalab-list-width;
     overflow: hidden;
     position: absolute;
     top: 0;
-    width: calc(100% - #{$findalab-list-width}); // interpolate for sass to interpret var
+    //width: calc(100% - #{$findalab-list-width}); // interpolate for sass to interpret var
     border-left: $findalab-border;
     border-radius: 0 $findalab-radius $findalab-radius 0;
+    z-index: -1;
   }
 
   &.is-active {
