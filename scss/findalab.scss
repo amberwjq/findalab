@@ -124,9 +124,9 @@ $findalab-hours-font-size: 15px !default;
   }
 }
 
-.findalab {
+.findalab_main {
   @extend %findalab-box;
-  display: none;
+ // display: none;
 }
 
 .findalab-loading {
@@ -164,12 +164,13 @@ $findalab-hours-font-size: 15px !default;
 }
 
 .findalab__search__title {
+  text-align: center;
   margin: 0;
 }
 
 .findalab__search__desc {
-  margin: 0;
-  margin-bottom: 0.5rem;
+  margin: 1rem 3rem;
+
 }
 
 .findalab__search__user-location {
