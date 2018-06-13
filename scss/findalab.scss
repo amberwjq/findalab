@@ -77,7 +77,8 @@ $findalab-total-background: #f9f9f9 !default;
 
 /// Box shadow for total area.
 /// @type Box Shadow
-$findalab-total-shadow: 0 -2px 15px 0 rgba(#111, 0.07) !default;
+
+$findalab-total-shadow: 5px 5px 8px 6px rgba(#111,0.07) !default;
 
 /// Height for the loading placholder.
 /// @type Number
@@ -89,7 +90,7 @@ $findalab-loading-height-mobile: 356px !default;
 
 /// Color for the user location text
 /// @type Color
-$findlab-user-location-color: #3398db !default;
+$findlab-user-location-color: #7a8186 !default;
 
 /// Font Weight for the user location button
 /// @type number
@@ -149,10 +150,12 @@ $findalab-hours-font-size: 15px !default;
 .findalab__search {
   animation: fadeInOpacity 1s ease-in-out;
   animation-fill-mode: forwards;
-  background-color: $findalab-search-background;
+  background-color: $findalab-results-background;
   border-bottom: $findalab-border;
-  border-radius: $findalab-radius 0 0;
+  border-radius: $findalab-radius;
+  margin-bottom: 5px;
   padding: $findalab-padding;
+  box-shadow: $findalab-total-shadow;
 
   @media only screen and (min-width: $findalab-breakpoint) {
     width: $findalab-list-width;
@@ -174,14 +177,17 @@ $findalab-hours-font-size: 15px !default;
 }
 
 .findalab__search__user-location {
-  background: transparent;
-  border: 0;
+  background: $findalab-background;
+  border: $findalab-border;
   color: $findlab-user-location-color;
   font-weight: $findalab-user-location-font-weight;
   line-height: 1;
-  margin-top: 0.5rem;
+  margin-bottom: 20px;
   padding: 0;
-  text-decoration: underline;
+  height:25px;
+  width:80px;
+  border-radius: $findalab-radius;
+
 
   &:hover {
     cursor: pointer;
@@ -200,7 +206,7 @@ $findalab-hours-font-size: 15px !default;
   animation: fadeInOpacity 1s ease-in-out;
   animation-fill-mode: forwards;
   background-color: $findalab-total-background;
-  border-radius: 0 0 0 $findalab-radius;
+  border-radius: 0 0 $findalab-radius $findalab-radius;
   border-top: $findalab-border;
   box-shadow: $findalab-total-shadow;
   padding: $findalab-padding;
@@ -212,10 +218,8 @@ $findalab-hours-font-size: 15px !default;
 }
 
 .findalab_box {
-  width: $findalab-list-width;
+  width: $findalab-list-width ;
   margin: 3rem 1rem;
-  border: $findalab-border;
-  border-radius: $findalab-radius;
   box-shadow: $findalab-total-shadow;
   z-index: 0;
 }
@@ -261,9 +265,10 @@ $findalab-hours-font-size: 15px !default;
   animation: fadeInOpacity 1s ease-in-out;
   animation-fill-mode: forwards;
   background-color: $findalab-results-background;
+  border-radius: $findalab-radius $findalab-radius 0 0;
   display: none;
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 1px 0;
   max-height: $findalab-height;
   overflow: auto;
   padding: 0;

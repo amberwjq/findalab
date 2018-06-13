@@ -6,13 +6,14 @@
   <div class="findalab_main">
       <div class="findalab_box">
           <div class="findalab__search">
+              <button class="findalab__search__user-location" type="button" data-findalab-user-location></button>
               <div data-findalab-inputgroup-container>
                 <input type="text" data-findalab-search-field data-findalab-inputgroup-field>
                 <div data-findalab-inputgroup-button>
                   <button type="button" data-findalab-search-button data-qa-id="Findalab Search Button"></button>
                 </div>
               </div>
-              <button class="findalab__search__user-location" type="button" data-findalab-user-location></button>
+
               <div data-findalab-day-filter class="findalab__search__day-filter"></div>
               <div class="findalab__nav" data-findalab-nav>
                 <button type="button" class="findalab__nav__item is-active" data-findalab-nav-item="list">List View</button>
@@ -56,7 +57,7 @@
           <div data-findalab-result-simple-hours></div>
           <div data-findalab-result-structured-hours>
             <span data-findlab-lab-hours-open class="findalab__open">
-              <span class="findalab__open__dot">●</span> <strong>Open Now</strong>
+              <strong>Open Now</strong><span class="findalab__open__dot">●</span>
             </span>
             <a href="#" data-findalab-toggle-hours>Show Hours ▼</a>
 

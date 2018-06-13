@@ -145,7 +145,7 @@
         userLocation: {
           showOption: false,
           icon: 'fa fa-map-marker',
-          msg: 'Or use current location',
+          msg: 'Locate Me',
           loading: {
             icon: 'fa fa-spin fa-spinner',
             msg: 'Searching current location...'
@@ -163,7 +163,7 @@
           showOption: false,
           radioAllText: 'All',
           radioDaysText: {
-              6 : 'Have Saturday Hours'
+              6 : 'Open Saturdays'
           },
           dayOnly: null
         },
@@ -649,6 +649,7 @@
                   self.settings.lab.buttonText +
                   '</a>';
           }
+          console.log(infoWindowContent);
 
           return infoWindowContent;
       };
@@ -799,7 +800,7 @@
           event.preventDefault();
           var $link = $(this);
           var $toggle = $link.siblings('.findalab__hours');
-            $link.text($toggle.is(':visible') ? 'Show Hours ▼' : 'Hide Hours ▲');
+            $link.text($toggle.is(':visible') ? 'Show Hours' : 'Hide Hours');
           $toggle.slideToggle('300');
         });
       };
@@ -900,6 +901,7 @@
       */
       this._setLabSelectText = function(text) {
         this.find('[data-findalab-result-button]').html(text);
+        console.log(text);
         self.settings.lab.buttonText = text;
       };
 
