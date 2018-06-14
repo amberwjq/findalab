@@ -100,6 +100,10 @@ $findalab-user-location-font-weight: 500 !default;
 /// @type Number
 $findalab-hours-font-size: 15px !default;
 
+/// Color for the radio button
+/// @type Color
+$findlab-radio-button-color:  #ed9013!default;
+
 // Styles
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -271,7 +275,7 @@ $findalab-hours-font-size: 15px !default;
   border-radius: $findalab-radius $findalab-radius 0 0;
   display: none;
   list-style-type: none;
-  margin: 0 0 1px 0;
+  margin: 0;
   max-height: $findalab-height;
   overflow: auto;
   padding: 0;
@@ -447,7 +451,6 @@ input[type=radio]{
   margin-left: -30px;
 }
 
-
  .check::before {
   display: block;
   position: absolute;
@@ -466,11 +469,11 @@ input[type=radio]:checked ~ .check {
 }
 
 input[type=radio]:checked ~ .check::before{
-  background: #ed9013;
+  background: $findlab-radio-button-color;
 }
 
 input[type=radio]:checked ~ label{
-  color: #ed9013;
+  color: $findlab-radio-button-color;
 }
 
 @keyframes fadeInOpacity {
