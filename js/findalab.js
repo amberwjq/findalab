@@ -637,7 +637,7 @@
                   self.settings.lab.buttonText +
                   '</a>';
           }
-          console.log(infoWindowContent);
+          console.log(self.settings.lab.buttonClass);
 
           return infoWindowContent;
       };
