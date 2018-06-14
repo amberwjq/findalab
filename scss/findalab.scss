@@ -129,7 +129,7 @@ $findlab-radio-button-color:  #ed9013!default;
   }
 }
 
-.findalab{
+.findalab {
   @extend %findalab-box;
   display: none;
 }
@@ -238,11 +238,9 @@ $findlab-radio-button-color:  #ed9013!default;
   @media only screen and (min-width: $findalab-breakpoint) {
     display: block;
     height: 100%;
-    //left: $findalab-list-width;
     overflow: hidden;
     position: absolute;
     top: 0;
-    //width: calc(100% - #{$findalab-list-width}); // interpolate for sass to interpret var
     border-left: $findalab-border;
     border-radius: 0 $findalab-radius $findalab-radius 0;
     z-index: -1;
