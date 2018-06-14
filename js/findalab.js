@@ -640,7 +640,6 @@
                   self.settings.lab.buttonText +
                   '</a>';
           }
-          console.log(self.settings.lab.buttonClass);
 
           return infoWindowContent;
       };
@@ -892,7 +891,6 @@
       */
       this._setLabSelectText = function(text) {
         this.find('[data-findalab-result-button]').html(text);
-        console.log(text);
         self.settings.lab.buttonText = text;
       };
 
