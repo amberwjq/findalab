@@ -104,6 +104,14 @@ $findalab-hours-font-size: 15px !default;
 /// @type Color
 $findlab-radio-button-color: #ed9013 !default;
 
+/// Border for component.
+/// @type Border (width, style, color)
+$findlab-radio-button-border: 2px solid #e3b77d !default;
+
+/// Border for component.
+/// @type Border (width, style, color)
+$findlab-radio-button-checked-border: 2px solid  #ed9013 !default;
+
 // Styles
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -427,21 +435,21 @@ $findlab-radio-button-color: #ed9013 !default;
   left: 3px;
 }
 
-input[type=radio]{
-  position: absolute;
-  visibility: hidden;
-}
-
 .findalab__dayFilter {
   display: inline-block;
   position: relative;
   margin-left: 20px;
   padding: 0 20px;
 
-  .findalab__check {
+  input[type=radio]{
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .findalab__radioButton {
     display: block;
     position: absolute;
-    border: 2px solid #e3b77d;
+    border: $findlab-radio-button-border;
     border-radius: 100%;
     height: 26px;
     width: 26px;
@@ -449,7 +457,7 @@ input[type=radio]{
     margin-left: -30px;
   }
 
-  .findalab__check::before {
+  .findalab__radioButton::before {
     display: block;
     position: absolute;
     content: '';
@@ -461,11 +469,11 @@ input[type=radio]{
     margin: auto;
   }
 
-  input[type=radio]:checked ~ .findalab__check {
-    border: 2px solid #ed9013;
+  input[type=radio]:checked ~ .findalab__radioButton {
+    border: $findlab-radio-button-checked-border;
   }
 
-  input[type=radio]:checked ~ .findalab__check::before {
+  input[type=radio]:checked ~ .findalab__radioButton::before {
     background: $findlab-radio-button-color;
   }
 
@@ -473,7 +481,6 @@ input[type=radio]{
     color: $findlab-radio-button-color;
   }
 }
-
 
 @keyframes fadeInOpacity {
   0% {
