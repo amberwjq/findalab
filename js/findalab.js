@@ -477,13 +477,14 @@
             }
         }
         return res;
-    }
+      }
+
       /**
        * check if a lab opens 24 hours 7 days
        * @param  {{day:hours}}  component.types structured_hours components
        * @return {boolean} true if the lab is open 24 hours 7 days. false if not.
        */
-      this.isOpenWholeDayAllWeek= function(component) {
+      this.isOpenWholeDayAllWeek = function(component) {
         var result = true;
         objectValues(component).forEach(function(element){
           if(!self.isOpenWholeDay(element)) result = false;
@@ -496,7 +497,7 @@
        * @param  {{open:"AM", close:"PM"}}
        * @return {boolean} true if the lab is open 24 hours. false if not.
        */
-      this.isOpenWholeDay= function(component) {
+      this.isOpenWholeDay = function(component) {
         if(component.open == "0:00 AM" && component.close == "11:59 PM" && !component.lunch_start && !component.lunch_stop){
           return true;
         } else {
