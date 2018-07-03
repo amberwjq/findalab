@@ -233,7 +233,6 @@ $findlab-radio-button-checked-border: 2px solid #ed9013 !default;
 .findalab__box__top {
   position: relative;
   z-index: 2;
-  width: auto;
 
   @media only screen and (min-width: $findalab-breakpoint) {
     width: $findalab-list-width;
@@ -244,7 +243,6 @@ $findlab-radio-button-checked-border: 2px solid #ed9013 !default;
 .findalab__box__bottom {
   position: relative;
   z-index: 2;
-  width: auto;
 
   @media only screen and (min-width: $findalab-breakpoint) {
     width: $findalab-list-width;
