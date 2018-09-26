@@ -72,7 +72,7 @@
          * @property {string} onlyStates            The lab states to be included (white-list).
          * @property {array}  recommendedNetworks   List of networks that are recommended.
          * @property {string} filterByOrder         Filter better labs to this order transaction id.
-         * @property {string} filters               Filter labs that only do drug test.
+         * @property {string} filters               Filter labs that only do cerain test.
          * @property {array}  filterByTests         Filter labs to those that can service this list of tests by key attribute (name, slug...).
          */
         searchFunction: {
